@@ -1,3 +1,4 @@
+const config = require('../../wdio.conf.js').config;
 const utils = require('../utils');
 
 describe('When Monkey testing with gremlins', () => {
@@ -5,7 +6,7 @@ describe('When Monkey testing with gremlins', () => {
         browser.url('key_presses');
 
         // Load gremlins script into HTML <head> tag
-        browser.executeAsync(utils.loadScript, utils.gremlinScript);
+        browser.executeAsync(utils.loadScript, config.gremlinScript);
 
         // Start the monkey test
         browser.executeAsync(unleashGremlins, 10000); // The duration must be lower than the mocha timeout.

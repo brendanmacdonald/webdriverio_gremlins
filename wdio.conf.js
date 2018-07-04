@@ -1,6 +1,6 @@
 exports.config = {
     specs: [
-        __dirname + '/tests/**'
+        __dirname + '/test/tests/**', 
     ],
     maxInstances: 10,
     capabilities: [{
@@ -8,7 +8,7 @@ exports.config = {
         browserName: 'chrome',
         chromeOptions: {
             forceDevToolsScreenshot: true,
-            args: ['--disable-gpu', '--auto-open-devtools-for-tabs', 'start-maximized', '--enable-logging', '--v=1', '--log-path=chromedriver.log']
+            args: ['--disable-gpu', '--auto-open-devtools-for-tabs', 'start-maximized', '--enable-logging', '--v=1']
         }
     }],
     sync: true,
@@ -27,5 +27,6 @@ exports.config = {
     mochaOpts: {
         ui: 'bdd',
         timeout: 600000
-    }
+    },
+    gremlinScript: 'https://rawgit.com/marmelab/gremlins.js/master/gremlins.min.js'
 }
