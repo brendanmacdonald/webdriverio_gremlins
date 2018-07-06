@@ -8,20 +8,17 @@ exports.config = {
         browserName: 'chrome',
         chromeOptions: {
             forceDevToolsScreenshot: true,
-            args: ['--disable-gpu', '--auto-open-devtools-for-tabs', 'start-maximized', '--enable-logging', '--v=1']
+            args: [ '--auto-open-devtools-for-tabs', 'start-maximized']//, '--enable-logging', '--v=1']
         }
     }],
     sync: true,
-    logLevel: 'verbose',
-    logOutput: './logs',
     coloredLogs: true,
     deprecationWarnings: true,
     bail: 0,
-    baseUrl: 'https://the-internet.herokuapp.com/',
+    baseUrl: 'https://www.scottlogic.com/',
     services: ['chromedriver'],
     port: 9515,
     path: '/',
-    chromeDriverLogs: './logs',
     framework: 'mocha',
     reporters: ['dot'],
     mochaOpts: {

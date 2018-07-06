@@ -3,7 +3,7 @@ const utils = require('../utils');
 
 describe('When Monkey testing with gremlins', () => {
     it('lets test a challending DOM', () => {
-        browser.url('who-we-are');
+        browser.url('our-work');
 
         // Load gremlins script into HTML <head> tag
         browser.executeAsync(utils.loadScript, config.gremlinScript);
@@ -27,11 +27,7 @@ function unleashGremlins(duration, callback) {
         .after(() => {
             callback;
         })
-        // .gremlin(gremlins.species.formFiller()) // fills forms by entering data, selecting options, clicking checkboxes, etc
-         .gremlin(gremlins.species.typer()) // types keys on the keyboard
-         .gremlin(gremlins.species.toucher()) // touches anywhere on the visible area of the document
          .gremlin(gremlins.species.scroller()) // scrolls the viewport to reveal another part of the document
-        //.gremlin(gremlins.species.clicker().clickTypes(['click'], 'dblclick', 'mouseover', 'mousedown', 'mouseup','mousemove', 'mouseout')) // clicks anywhere on the visible area of the document
         .mogwai(gremlins.mogwais.gizmo().maxErrors(1))
         .unleash();
 }
